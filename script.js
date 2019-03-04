@@ -4,24 +4,30 @@ let paper = document.getElementById("paper");
 let scissors = document.getElementById("scissors");
 let resetBtn = document.getElementById("reset");
 let winP = document.getElementById("win-count");
-let loseP = document.getElementById("lose-count")
+let loseP = document.getElementById("lose-count");
+// let display = document.getElementById("display");
 let wins = 0;
 let losses = 0;
+let choices = ["Rock", "Paper", "Scissors"]
+
 
 
 // Listeners
 rock.addEventListener("click", function(){
-  let choice = 1;
+  let choice = "Rock";
+  // display.innerHTML = "You chose " + choice
   game(choice)
 })
 
 paper.addEventListener("click", function(){
-  let choice = 2;
+  let choice = "Paper";
+  // display.innerHTML = "You chose " + choice
   game(choice)
 })
 
 scissors.addEventListener("click", function(){
-  let choice = 3;
+  let choice = "Scissors";
+  // display.innerHTML = "You chose " + choice
   game(choice)
 })
 
@@ -32,16 +38,40 @@ resetBtn.addEventListener("click", function(){
 //functions
 
 function game(choice) {
-  var winner = Math.ceil(Math.random() * 3) 
-  if (winner === choice) {
-    alert("You won!")
-    wins += 1
-    winP.innerHTML = "Wins: " + wins
+  var compChoice = choices[Math.floor(Math.random() * 3)] 
+  if (compChoice === choice) {
+    alert("Tie! The computer chose " + compChoice)
+  } else if(choice == "Rock") {
+      if (compChoice == "Paper"){
+        alert("Paper covers Rock! You lose!")
+        losses++
+        loseP.innerHTML = "Losses: " + losses
+      } else {
+        alert("Rock smashes scissors! You win!")
+        wins++
+        winP.innerHTML = "Wins: " + wins
+      }
+  } else if (choice == "Paper") {
+    if (compChoice == "Scissors"){
+      alert("Scissors cut paper! You lose!")
+      losses++
+      loseP.innerHTML = "Losses: " + losses
+    } else {
+      alert("Paper covers rock! You win!")
+      wins++
+      winP.innerHTML = "Wins: " + wins
+    }
   } else {
-    alert("You lost.")
-    losses += 1
-    loseP.innerHTML = "Losses: " + losses
-  } 
+    if (compChoice == "Rock"){
+      alert("Rock smashes scissors! You lose!")
+      losses++
+      loseP.innerHTML = "Losses: " + losses
+    } else {
+      alert("Scissors cut paper! You win!")
+      wins++
+      winP.innerHTML = "Wins: " + wins
+    }
+  }
 }
 
 function reset() {
