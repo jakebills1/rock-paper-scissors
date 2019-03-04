@@ -2,20 +2,35 @@
 <head>
   <title>Rock Paper Scissors</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
-  <h1>Play Rock, Paper, Scissors!</h1>
-  <div>
-    <p id="win-count">Wins: </p>
-    <p id="lose-count">Losses: </p>
-    <p id="display"></p>
+  <div class="container">
+    <div class="jumbotron">
+      <h1 class="display-4">Rock, Paper, Scissors!</h1>
+      <div>
+        <p class="lead">Click on rock, paper or scissors to start the game! Click reset if you want to start over.</p>
+        <p id="win-count">Wins: </p>
+        <p id="lose-count">Losses: </p>
+        <p id="tie-count">Ties: </p>
+        <p id="display"></p>
+      </div>
+      <hr />
+      <div class="buttons">
+        <div id="rock"><i class="fas fa-hand-rock fa-10x"></i></div>
+        <div id="paper"><i class="fas fa-hand-paper fa-10x"></i></div>
+        <div id="scissors"><i class="fas fa-hand-scissors fa-10x"></i></div>
+      </div>
+      <hr />
+      <div class="button">
+        <button id="reset" class="btn btn-outline-primary">Reset Score</button>
+      </div>
+    </div>
+
+
   </div>
-  <div>
-    <button id="rock">Rock</button>
-    <button id="paper">Paper</button>
-    <button id="scissors">Scissors</button>
-  </div>
-  <button id="reset">Reset Score</button>
+
 
 
   <script src="script.js"></script>

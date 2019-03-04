@@ -5,7 +5,9 @@ let scissors = document.getElementById("scissors");
 let resetBtn = document.getElementById("reset");
 let winP = document.getElementById("win-count");
 let loseP = document.getElementById("lose-count");
-// let display = document.getElementById("display");
+let tieP = document.getElementById("tie-count");
+let display = document.getElementById("display");
+let ties = 0;
 let wins = 0;
 let losses = 0;
 let choices = ["Rock", "Paper", "Scissors"]
@@ -41,6 +43,8 @@ function game(choice) {
   var compChoice = choices[Math.floor(Math.random() * 3)] 
   if (compChoice === choice) {
     alert("Tie! The computer chose " + compChoice)
+    ties++
+    tieP.innerHTML = "Ties: " + ties
   } else if(choice == "Rock") {
       if (compChoice == "Paper"){
         alert("Paper covers Rock! You lose!")
@@ -78,7 +82,9 @@ function game(choice) {
 function reset() {
   wins = 0
   losses = 0
+  ties = 0
   winP.innerHTML = "Wins: "
   loseP.innerHTML = "Losses: "
+  tieP.innerHTML  = "Ties: "
   alert("Game reset")
 }
