@@ -15,20 +15,20 @@ let choices = ["Rock", "Paper", "Scissors"]
 // Listeners
 rock.addEventListener("click", function(){
   let choice = "Rock";
-  // display.innerHTML = "You chose " + choice
-  game(choice)
+  display.innerHTML = "You chose " + choice
+  setTimeout(function() { game(choice) }, 1500)
 })
 
 paper.addEventListener("click", function(){
   let choice = "Paper";
-  // display.innerHTML = "You chose " + choice
-  game(choice)
+  display.innerHTML = "You chose " + choice
+  setTimeout(function() { game(choice) }, 1500)
 })
 
 scissors.addEventListener("click", function(){
   let choice = "Scissors";
-  // display.innerHTML = "You chose " + choice
-  game(choice)
+  display.innerHTML = "You chose " + choice
+  setTimeout(function() { game(choice) }, 1500)
 })
 
 resetBtn.addEventListener("click", function(){
@@ -72,12 +72,13 @@ function game(choice) {
       winP.innerHTML = "Wins: " + wins
     }
   }
+  display.innerHTML = ""
 }
 
 function reset() {
   wins = 0
   losses = 0
-  winP.innerHTML = "Wins: 0"
-  loseP.innerHTML = "Losses: 0"
+  winP.innerHTML = "Wins: "
+  loseP.innerHTML = "Losses: "
   alert("Game reset")
 }
